@@ -54,6 +54,37 @@ function setupHeaderShadow() {
   updateHeader();
 }
 
+function setupActiveNavigation() {
+  const links = bySelectorAll('.desktop-nav a[href^="#"]');
+  const sections = links
+    .map((link) => bySelector(link.getAttribute('href')))
+    .filter(Boolean);
+
+  if (links.length === 0 || sections.length === 0) return;
+
+  const setActiveLink = (id) => {
+    links.forEach((link) => {
+      link.classList.toggle('is-active', link.getAttribute('href') === `#${id}`);
+    });
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    const visibleSection = entries
+      .filter((entry) => entry.isIntersecting)
+      .sort((first, second) => second.intersectionRatio - first.intersectionRatio)[0];
+
+    if (visibleSection) setActiveLink(visibleSection.target.id);
+  }, {
+    rootMargin: '-35% 0px -55% 0px',
+    threshold: [0, 0.2, 0.5],
+  });
+
+  sections.forEach((section) => observer.observe(section));
+  links.forEach((link) => link.addEventListener('click', () => {
+    setActiveLink(link.getAttribute('href').slice(1));
+  }));
+}
+
 function setupImageFallbacks() {
   bySelectorAll('img').forEach((image) => {
     image.addEventListener('error', () => image.classList.add('is-missing'));
@@ -144,6 +175,7 @@ function setupQuoteForm() {
 configureBusinessLinks();
 setupMobileNavigation();
 setupHeaderShadow();
+setupActiveNavigation();
 setupImageFallbacks();
 setupHeroSlider();
 setupQuoteForm();

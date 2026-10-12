@@ -169,9 +169,33 @@ button {
   transition: color .2s ease;
 }
 
+.desktop-nav a {
+  position: relative;
+  padding: 8px 0;
+}
+
+.desktop-nav a::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 1px;
+  left: 0;
+  height: 2px;
+  background: var(--orange);
+  border-radius: 999px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .2s ease;
+}
+
 .desktop-nav a:hover,
 .desktop-nav .is-active {
   color: var(--orange);
+}
+
+.desktop-nav a:hover::after,
+.desktop-nav .is-active::after {
+  transform: scaleX(1);
 }
 
 .header-actions {
@@ -776,10 +800,13 @@ h2 span,
   box-shadow: 0 6px 12px rgb(0 0 0 / 18%);
 }
 
-.whatsapp-button>span {
+.whatsapp-button__icon {
   position: absolute;
   left: 16px;
   top: 50%;
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
   font-size: 1.55rem;
   transform: translateY(-50%);
 }
@@ -803,6 +830,12 @@ h2 span,
   border-radius: 50%;
   box-shadow: var(--shadow);
   font-size: 1.9rem;
+}
+
+.floating-whatsapp svg {
+  width: 29px;
+  height: 29px;
+  fill: currentColor;
 }
 
 .site-footer {
@@ -1012,6 +1045,16 @@ h2 span,
     padding-top: 68px;
   }
 
+  .hero-copy {
+    width: 100%;
+    min-width: 0;
+    margin-left: 0;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.1rem, 9.2vw, 2.7rem);
+  }
+
   .hero-overlay {
     background: linear-gradient(90deg, rgb(0 0 0 / 76%), rgb(0 0 0 / 38%));
   }
@@ -1058,8 +1101,14 @@ h2 span,
 
   .projects-grid {
     grid-template-columns: repeat(2, 1fr);
-    height: 360px;
+    grid-template-rows: repeat(2, auto);
+    height: auto;
     gap: 8px;
+  }
+
+  .projects-grid img {
+    height: auto;
+    aspect-ratio: 4 / 5;
   }
 
   .quote-layout {
@@ -1127,9 +1176,6 @@ h2 span,
     height: 185px;
   }
 
-  .projects-grid {
-    height: 300px;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
