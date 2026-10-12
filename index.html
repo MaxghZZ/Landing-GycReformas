@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="GYC Reformas: reformas integrales, interiores y exteriores en Barcelona.">
+  <title>GYC Reformas | Reformas integrales en Barcelona</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="main.js" defer></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <header class="site-header" data-header>
+    <div class="container header-content">
+      <a class="logo" href="#inicio" aria-label="GYC Reformas, inicio">
+        <svg class="logo-mark" viewBox="0 0 64 60" aria-hidden="true">
+          <path d="M8 54V25L31 5l25 20" />
+        </svg>
+        <span class="logo-name">GYC</span>
+        <span class="logo-subtitle">REFORMAS</span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Navegación principal">
+        <a class="is-active" href="#inicio">Inicio</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#nosotros">Sobre nosotros</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="button button--small header-cta" href="#contacto">Solicitar presupuesto</a>
+        <a class="header-phone" data-whatsapp-link href="https://wa.me/34611234567" target="_blank"
+          rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+          <span class="whatsapp-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M12 2a10 10 0 0 0-8.55 15.19L2 22l4.94-1.29A10 10 0 1 0 12 2Zm5.82 14.13c-.25.7-1.47 1.34-2.04 1.43-.52.08-1.18.11-1.9-.12-.44-.14-1-.33-1.73-.64-3.05-1.32-5.04-4.4-5.19-4.6-.15-.2-1.24-1.65-1.24-3.14 0-1.5.79-2.23 1.07-2.54.28-.3.61-.38.81-.38h.59c.19.01.44-.07.69.53.25.6.86 2.08.93 2.23.08.15.13.33.03.53-.1.2-.15.33-.3.5l-.45.53c-.15.15-.31.31-.13.61.17.3.77 1.26 1.65 2.05 1.14 1.02 2.1 1.33 2.4 1.48.3.15.5.13.67-.08.18-.2.77-.9.97-1.21.2-.3.4-.25.68-.15.28.1 1.76.83 2.06.98.3.15.5.23.57.35.07.13.07.74-.18 1.44Z" />
+            </svg>
+          </span>
+          <span data-business-phone>+34 611 23 45 67</span>
+        </a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-navigation"
+          data-menu-toggle>
+          <span class="sr-only">Abrir menú</span>
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <nav class="mobile-nav" id="mobile-navigation" aria-label="Navegación móvil" data-mobile-nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#nosotros">Sobre nosotros</a>
+      <a href="#contacto">Contacto</a>
+      <a class="button" href="#contacto">Solicitar presupuesto</a>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <section class="hero" id="inicio" aria-label="Presentación de GYC Reformas">
+      <div class="hero-media">
+        <div class="hero-media-fallback" aria-hidden="true"></div>
+        <img id="hero-image" src="assets/images/hero-kitchen.jpg" alt="Cocina abierta reformada con isla de mármol"
+          fetchpriority="high">
+        <div class="hero-overlay" aria-hidden="true"></div>
+      </div>
+      <button class="slider-arrow slider-arrow--previous" type="button" aria-label="Imagen anterior"
+        data-previous-slide>‹</button>
+      <button class="slider-arrow slider-arrow--next" type="button" aria-label="Imagen siguiente"
+        data-next-slide>›</button>
+
+      <div class="container hero-content">
+        <div class="hero-copy">
+          <p class="eyebrow eyebrow--light">Reformas integrales en Barcelona</p>
+          <h1>Transformamos <span>tus espacios</span> en mejores vidas</h1>
+          <p class="hero-description">Reformas integrales, interior y exterior, con un único equipo de confianza.
+            Calidad, compromiso y resultados.</p>
+          <div class="hero-actions">
+            <a class="button" href="#contacto">Solicitar presupuesto <b aria-hidden="true">→</b></a>
+            <a class="button button--outline" href="#proyectos">Ver nuestros trabajos</a>
+          </div>
+        </div>
+        <p class="hero-handwriting">Tu proyecto,<br><em>nuestro compromiso</em></p>
+        <div class="slider-dots" aria-label="Seleccionar imagen destacada">
+          <button class="is-active" type="button" data-slide-image="assets/images/hero-kitchen.jpg"
+            data-slide-alt="Cocina abierta reformada con isla de mármol" aria-label="Ver cocina reformada"
+            aria-current="true"></button>
+          <button type="button" data-slide-image="assets/images/project-living-room.jpg"
+            data-slide-alt="Salón y comedor contemporáneo reformado" aria-label="Ver salón reformado"></button>
+          <button type="button" data-slide-image="assets/images/project-bathroom-led.jpg"
+            data-slide-alt="Baño moderno reformado con espejo iluminado" aria-label="Ver baño reformado"></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="benefits" aria-label="Ventajas de GYC Reformas">
+      <div class="container benefits-grid">
+        <article class="benefit">
+          <span class="line-icon" aria-hidden="true"><svg viewBox="0 0 24 24">
+              <path d="M2 17h20M4 17v-5a8 8 0 0 1 16 0v5M9 7V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3" />
+            </svg></span>
+          <p>Equipo profesional<br>y cualificado</p>
+        </article>
+        <article class="benefit">
+          <span class="line-icon" aria-hidden="true"><svg viewBox="0 0 24 24">
+              <path
+                d="m9 12.75 2.25 2.25L15 9.75m-3-7.04A11.96 11.96 0 0 1 3.6 6 12 12 0 0 0 3 9.75c0 5.59 3.82 10.29 9 11.62 5.18-1.33 9-6.03 9-11.62 0-1.31-.21-2.57-.6-3.75h-.15c-3.2 0-6.1-1.25-8.25-3.29Z" />
+            </svg></span>
+          <p>Cumplimos plazos<br>y presupuesto</p>
+        </article>
+        <article class="benefit">
+          <span class="line-icon" aria-hidden="true"><svg viewBox="0 0 24 24">
+              <path d="m3 11 9-8 9 8M5 10v10h14V10M9 20v-6h6v6" />
+            </svg></span>
+          <p>Materiales de<br>primera calidad</p>
+        </article>
+        <article class="benefit">
+          <span class="line-icon" aria-hidden="true"><svg viewBox="0 0 24 24">
+              <path
+                d="M7 11.5V14m0-2.5 5.2 5.2a1.5 1.5 0 0 0 2.12 0l2.5-2.5a1.5 1.5 0 0 0 0-2.12l-5.2-5.2m0 0L8.5 7.5a1.5 1.5 0 0 0-2.12 0L3.5 10.38a1.5 1.5 0 0 0 0 2.12l3.5 3.5m4.62-6.5 3.5-3.5a1.5 1.5 0 0 1 2.12 0l3.18 3.18a1.5 1.5 0 0 1 0 2.12l-3.5 3.5" />
+            </svg></span>
+          <p>Atención personalizada</p>
+        </article>
+        <article class="benefit">
+          <span class="line-icon" aria-hidden="true"><svg viewBox="0 0 24 24">
+              <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z" />
+              <circle cx="12" cy="10" r="2.5" />
+            </svg></span>
+          <p>Barcelona y<br>alrededores</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="services section" id="servicios">
+      <div class="container">
+        <div class="section-heading section-heading--services">
+          <div>
+            <p class="eyebrow">Nuestros servicios</p>
+            <h2>Todo lo que necesitas para <span>tu reforma</span></h2>
+          </div>
+          <p>Nos encargamos de todo el proceso, desde la planificación hasta los últimos detalles, para que tú solo te
+            preocupes de disfrutar el resultado.</p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card"><img src="assets/images/service-kitchens.jpg" alt="Cocina de diseño reformada"
+              loading="lazy">
+            <h3>Cocinas</h3><a href="#contacto">Ver más <span>→</span></a>
+          </article>
+          <article class="service-card"><img src="assets/images/service-bathrooms.jpg" alt="Baño moderno reformado"
+              loading="lazy">
+            <h3>Baños</h3><a href="#contacto">Ver más <span>→</span></a>
+          </article>
+          <article class="service-card"><img src="assets/images/service-integral-renovations.jpg"
+              alt="Salón de una reforma integral" loading="lazy">
+            <h3>Reformas integrales</h3><a href="#contacto">Ver más <span>→</span></a>
+          </article>
+          <article class="service-card"><img src="assets/images/service-electrical.jpg"
+              alt="Profesional realizando una instalación eléctrica" loading="lazy">
+            <h3>Electricidad</h3><a href="#contacto">Ver más <span>→</span></a>
+          </article>
+          <article class="service-card"><img src="assets/images/service-plumbing.jpg"
+              alt="Trabajo de fontanería bajo un lavabo" loading="lazy">
+            <h3>Fontanería</h3><a href="#contacto">Ver más <span>→</span></a>
+          </article>
+          <article class="service-card"><img src="assets/images/service-drywall.jpg"
+              alt="Pasillo terminado con tabiquería de pladur" loading="lazy">
+            <h3>Pladur y tabiquería</h3><a href="#contacto">Ver más <span>→</span></a>
+          </article>
+          <article class="service-card"><img src="assets/images/service-flooring.jpg"
+              alt="Suelo de madera nuevo en vivienda" loading="lazy">
+            <h3>Suelos</h3><a href="#contacto">Ver más <span>→</span></a>
+          </article>
+          <article class="service-card"><img src="assets/images/service-tiling.jpg" alt="Profesional colocando azulejos"
+              loading="lazy">
+            <h3>Alicatados y racholas</h3><a href="#contacto">Ver más <span>→</span></a>
+          </article>
+          <article class="service-card"><img src="assets/images/service-painting.jpg"
+              alt="Pintura interior de una pared" loading="lazy">
+            <h3>Pintura</h3><a href="#contacto">Ver más <span>→</span></a>
+          </article>
+          <article class="service-card"><img src="assets/images/service-carpentry.png" alt="Puerta de madera instalada"
+              loading="lazy">
+            <h3>Carpintería</h3><a href="#contacto">Ver más <span>→</span></a>
+          </article>
+          <article class="service-card"><img src="assets/images/service-waterproofing.png"
+              alt="Terraza exterior impermeabilizada" loading="lazy">
+            <h3>Impermeabilización</h3><a href="#contacto">Ver más <span>→</span></a>
+          </article>
+          <article class="service-card"><img src="assets/images/service-hvac.png"
+              alt="Aire acondicionado instalado en interior moderno" loading="lazy">
+            <h3>Calefacción y aire acondicionado</h3><a href="#contacto">Ver más <span>→</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects section" id="proyectos">
+      <div class="container projects-layout">
+        <div class="projects-copy">
+          <p class="eyebrow eyebrow--light">Nuestros trabajos</p>
+          <h2>Proyectos que hablan <span>por sí solos</span></h2>
+          <p>Descubre algunos de nuestros proyectos realizados y comprueba la calidad de nuestro trabajo.</p>
+          <a class="button" href="#contacto">Ver galería completa <b aria-hidden="true">→</b></a>
+        </div>
+        <div class="projects-grid" aria-label="Galería de proyectos">
+          <img src="assets/images/project-kitchen-island.jpg" alt="Cocina abierta con isla moderna" loading="lazy">
+          <img src="assets/images/project-bathroom-led.jpg" alt="Baño moderno con espejo LED redondo" loading="lazy">
+          <img src="assets/images/project-living-room.jpg" alt="Comedor y salón contemporáneo con salida a terraza"
+            loading="lazy">
+          <img src="assets/images/project-terrace.jpg" alt="Terraza patio exterior renovada" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section class="quote section" id="contacto">
+      <div class="container quote-layout">
+        <div class="quote-copy">
+          <p class="eyebrow">Tu proyecto empieza aquí</p>
+          <h2>Solicita tu presupuesto <span>gratuito</span></h2>
+          <p>Cuéntanos tu idea y te asesoramos sin compromiso. Nos pondremos en contacto contigo lo antes posible.</p>
+          <ul class="quote-benefits">
+            <li><span>◷</span>Respuesta rápida</li>
+            <li><span>☷</span>Asesoramiento personalizado</li>
+            <li><span>✓</span>Sin compromiso</li>
+          </ul>
+        </div>
+
+        <form class="quote-form" data-quote-form>
+          <div class="form-field"><label for="full-name">Nombre y apellidos</label><input id="full-name" name="name"
+              type="text" autocomplete="name" required></div>
+          <div class="form-field"><label for="phone">Teléfono</label><input id="phone" name="phone" type="tel"
+              autocomplete="tel" required></div>
+          <div class="form-field"><label for="email">Email</label><input id="email" name="email" type="email"
+              autocomplete="email" required></div>
+          <div class="form-field"><label for="service-type">Tipo de reforma</label><select id="service-type"
+              name="service" required>
+              <option value="" selected disabled>Tipo de reforma</option>
+              <option value="Reforma integral">Reforma integral</option>
+              <option value="Cocina">Cocina</option>
+              <option value="Baño">Baño</option>
+              <option value="Electricidad o fontanería">Electricidad / fontanería</option>
+              <option value="Otro proyecto">Otro proyecto</option>
+            </select></div>
+          <div class="form-field"><label for="project">Cuéntanos tu proyecto</label><textarea id="project"
+              name="project" rows="4" required></textarea></div>
+          <button class="button button--form" type="submit">Enviar solicitud <b aria-hidden="true">→</b></button>
+          <p class="form-status" data-form-status aria-live="polite"></p>
+        </form>
+
+        <aside class="quote-visual">
+          <img src="assets/images/quote-team-van.png" alt="Furgoneta y equipo de GYC Reformas" loading="lazy">
+          <p>Reformas hoy,<br>hogares para siempre</p>
+          <a class="whatsapp-button" data-whatsapp-link href="https://wa.me/34611234567" target="_blank"
+            rel="noopener noreferrer"><span aria-hidden="true">◔</span> Habla con nosotros<br><small>por
+              WhatsApp</small></a>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <a class="floating-whatsapp" data-whatsapp-link href="https://wa.me/34611234567" target="_blank"
+    rel="noopener noreferrer" aria-label="Hablar por WhatsApp">◔</a>
+
+  <footer class="site-footer" id="nosotros">
+    <div class="container footer-content">
+      <div class="footer-brand"><a class="logo logo--footer" href="#inicio" aria-label="GYC Reformas, inicio"><svg
+            class="logo-mark" viewBox="0 0 64 60" aria-hidden="true">
+            <path d="M8 54V25L31 5l25 20" />
+          </svg><span class="logo-name">GYC</span><span class="logo-subtitle">REFORMAS</span></a>
+        <p>Reformas integrales en Barcelona y alrededores.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Navegación secundaria"><a href="#inicio">Inicio</a><a
+          href="#servicios">Servicios</a><a href="#proyectos">Proyectos</a><a href="#nosotros">Sobre nosotros</a><a
+          href="#contacto">Contacto</a></nav>
+      <div class="footer-contact">
+        <a class="footer-social-link" href="#" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5Zm0 2A2.5 2.5 0 1 0 14.5 12 2.5 2.5 0 0 0 12 9.5Zm5.25-3.13a1.13 1.13 0 1 1-1.13 1.13 1.13 1.13 0 0 1 1.13-1.13Z" />
+          </svg>
+        </a>
+        <a class="footer-social-link" href="#" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M13.6 21v-8h2.7l.4-3.1h-3.1V8c0-.9.3-1.5 1.6-1.5h1.7V3.7c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.4-4 4.1v2.2H8v3.1h2.5v8h3.1Z" />
+          </svg>
+        </a>
+        <a class="footer-phone" data-whatsapp-link href="https://wa.me/34611234567" target="_blank"
+          rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M19.6 15.5c-1.2 0-2.4-.2-3.5-.6a1 1 0 0 0-1 .2l-2.2 2.2a15.2 15.2 0 0 1-6.1-6.1L9 8.9a1 1 0 0 0 .2-1A11 11 0 0 1 8.6 4c0-.6-.4-1-1-1H4.1c-.6 0-1 .4-1 1C3.1 13.3 10.7 21 20 21c.6 0 1-.4 1-1v-3.5c0-.6-.4-1-1-1h-.4Z" />
+          </svg>
+          <span data-business-phone>+34 611 23 45 67</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
