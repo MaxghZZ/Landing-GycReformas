@@ -148,6 +148,93 @@ function setupHeroSlider() {
   restartAutoplay();
 }
 
+function setupGallery() {
+  const dialog = bySelector('[data-gallery-dialog]');
+  const image = bySelector('[data-gallery-image]');
+  const caption = bySelector('[data-gallery-caption]');
+  const counter = bySelector('[data-gallery-counter]');
+  const closeButton = bySelector('[data-gallery-close]');
+  const previousButton = bySelector('[data-gallery-previous]');
+  const nextButton = bySelector('[data-gallery-next]');
+
+  if (!dialog || !image || !caption || !counter || !closeButton || !previousButton || !nextButton) return;
+
+  const photos = [
+    { src: 'assets/images/gallery-kitchen-dining.webp', alt: 'Cocina y comedor reformados por GYC' },
+    { src: 'assets/images/gallery-kitchen-beams.webp', alt: 'Cocina reformada con vigas vistas' },
+    { src: 'assets/images/gallery-dining-room.webp', alt: 'Comedor reformado con suelo de madera' },
+    { src: 'assets/images/gallery-kitchen-white.webp', alt: 'Cocina blanca de una reforma terminada' },
+    { src: 'assets/images/gallery-kitchen-detail.webp', alt: 'Cocina blanca reformada con acabados en madera' },
+    { src: 'assets/images/gallery-kitchen-window.webp', alt: 'Cocina reformada con luz natural' },
+    { src: 'assets/images/gallery-bathroom-shower.webp', alt: 'Ducha terminada en baño reformado' },
+    { src: 'assets/images/gallery-bathroom-floral.webp', alt: 'Baño terminado con revestimiento decorativo' },
+    { src: 'assets/images/gallery-bathroom-glass.webp', alt: 'Baño renovado con mampara de cristal' },
+    { src: 'assets/images/gallery-bathroom-neutral.webp', alt: 'Baño reformado en tonos neutros' },
+    { src: 'assets/images/gallery-bathroom-vanity.webp', alt: 'Baño reformado con mueble de madera y espejo circular' },
+    { src: 'assets/images/gallery-hallway-floor.webp', alt: 'Pasillo renovado con suelo de madera' },
+    { src: 'assets/images/gallery-open-floor.webp', alt: 'Estancia terminada con pavimento de madera' },
+    { src: 'assets/images/gallery-kitchen-compact.webp', alt: 'Cocina compacta de una reforma integral' },
+    { src: 'assets/images/gallery-kitchen-island.webp', alt: 'Cocina reformada con isla y luminarias colgantes' },
+    { src: 'assets/images/gallery-carpentry-door.webp', alt: 'Puerta de madera instalada por GYC' },
+    { src: 'assets/images/gallery-interior-finish.webp', alt: 'Interior amplio completamente renovado' },
+    { src: 'assets/images/gallery-bathroom-modern.webp', alt: 'Baño moderno terminado con ducha y mueble suspendido' },
+  ];
+
+  let activeIndex = 0;
+  let lastTrigger;
+
+  const renderPhoto = () => {
+    const photo = photos[activeIndex];
+    image.src = photo.src;
+    image.alt = photo.alt;
+    caption.textContent = photo.alt;
+    counter.textContent = `${activeIndex + 1} / ${photos.length}`;
+  };
+
+  const closeGallery = () => {
+    dialog.hidden = true;
+    dialog.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('is-gallery-open');
+    lastTrigger?.focus();
+  };
+
+  const openGallery = (index, trigger) => {
+    activeIndex = Number.isInteger(index) && index >= 0 && index < photos.length ? index : 0;
+    lastTrigger = trigger;
+    renderPhoto();
+    dialog.hidden = false;
+    dialog.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('is-gallery-open');
+    window.requestAnimationFrame(() => closeButton.focus());
+  };
+
+  const changePhoto = (step) => {
+    activeIndex = (activeIndex + step + photos.length) % photos.length;
+    renderPhoto();
+  };
+
+  bySelectorAll('[data-gallery-open]').forEach((trigger) => {
+    trigger.addEventListener('click', () => {
+      openGallery(Number.parseInt(trigger.dataset.galleryIndex, 10), trigger);
+    });
+  });
+
+  closeButton.addEventListener('click', closeGallery);
+  previousButton.addEventListener('click', () => changePhoto(-1));
+  nextButton.addEventListener('click', () => changePhoto(1));
+
+  dialog.addEventListener('click', (event) => {
+    if (event.target === dialog) closeGallery();
+  });
+
+  window.addEventListener('keydown', (event) => {
+    if (dialog.hidden) return;
+    if (event.key === 'Escape') closeGallery();
+    if (event.key === 'ArrowLeft') changePhoto(-1);
+    if (event.key === 'ArrowRight') changePhoto(1);
+  });
+}
+
 function setupQuoteForm() {
   const form = bySelector('[data-quote-form]');
   const status = bySelector('[data-form-status]');
@@ -178,4 +265,5 @@ setupHeaderShadow();
 setupActiveNavigation();
 setupImageFallbacks();
 setupHeroSlider();
+setupGallery();
 setupQuoteForm();
